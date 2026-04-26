@@ -1,6 +1,5 @@
 package com.aanuj.spring.app.SpringApplication.service;
 
-import com.aanuj.spring.app.SpringApplication.dto.LoginDTO;
 import com.aanuj.spring.app.SpringApplication.dto.SignUpDTO;
 import com.aanuj.spring.app.SpringApplication.dto.UserDTO;
 import com.aanuj.spring.app.SpringApplication.entities.User;
@@ -8,10 +7,7 @@ import com.aanuj.spring.app.SpringApplication.exceptions.ResourceNotFoundExcepti
 import com.aanuj.spring.app.SpringApplication.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
