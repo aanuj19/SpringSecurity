@@ -32,6 +32,11 @@ public class UserService implements UserDetailsService {
                 new ResourceNotFoundException("User with email " +  username + " not found"));
     }
 
+    public User getUserByEmailID(String email) throws UsernameNotFoundException {
+        return userRepository.findByEmail(email).orElseThrow(() ->
+                new ResourceNotFoundException("User with email " +  email + " not found"));
+    }
+
     public User getUserByUserId(Long userId){
         return userRepository.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User with id: "+ userId + " does not exists"));
     }
@@ -45,5 +50,9 @@ public class UserService implements UserDetailsService {
         toBeCreatedCreate.setPassword(passwordEncoder.encode(toBeCreatedCreate.getPassword()));
         User saveUser = userRepository.save(toBeCreatedCreate);
         return modelMapper.map(saveUser, UserDTO.class);
+    }
+
+    public User saveUser(User user) {
+        return userRepository.save(user);
     }
 }
